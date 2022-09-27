@@ -20,7 +20,7 @@
   ![](./image/SS-pwd.jpg)
 - ls (lists). Command untuk melihat isi file yang ada di sebuah direktori.
   ![](./image/SS-ls.jpg)
-- cd (change directory). Command untuk berpindah direktori.
+- cd (change directory). Command untuk berpindah direktori.  
   ![](./image/SS-cd.jpg)
 - cat (concatenate). Command untuk melihat seluruh isi sebuah file.
   ![](./image/SS-cat.jpg)
@@ -36,3 +36,13 @@
   ![](./image/SS-cp.jpg)
 - cp -r (recursive copy). Command untuk mengcopy (menyalin) directory.
   ![](./image/SS-cp-r.jpg)
+- mv (move). Command untuk memindahkan file dan direktori.
+  ![](./image/SS-mv.jpg)
+- mv (rename). Command mv juga bisa untuk mengganti nama file atau direktori.
+  ![](./image/SS-mv-rename.jpg)
+- rm (remove). Command untuk menghapus file.
+  ![](./image/SS-rm.jpg)
+- rm -r (recursive remove). Command untuk menghapus direktori.
+  ![](./image/SS-rm-r.jpg)
+
+## Git & GitHub Dasar
