@@ -2,4 +2,5 @@
 
 ## Unix Command Line
 
-Shell adalah suatu Program atau User Interface (UI) untuk berkomunikasi atau memerintah sistem.
+Shell adalah suatu User Interface (UI) atau Program untuk berkomunikasi atau memerintah sistem.
+Command Line Interface (CLI) atau Antarmuka Baris Perintah ber
