@@ -16,13 +16,13 @@
 
 <b>Command pada CLI</b>
 
-- pwd (Print working directory). Command untuk melihat current working directory.
+- pwd (Print working directory). Command untuk melihat current working directory. <br/>
   ![](./image/SS-pwd.jpg)
-- ls (lists). Command untuk melihat isi file yang ada di sebuah direktori.
+- ls (lists). Command untuk melihat isi file yang ada di sebuah direktori. <br/>
   ![](./image/SS-ls.jpg)
-- cd (change directory). Command untuk berpindah direktori.  
+- cd (change directory). Command untuk berpindah direktori. <br/>
   ![](./image/SS-cd.jpg)
-- cat (concatenate). Command untuk melihat seluruh isi sebuah file.
+- cat (concatenate). Command untuk melihat seluruh isi sebuah file. <br/>
   ![](./image/SS-cat.jpg)
 - head. Command untuk melihat beberapa line awal dari sebuah file.
   ![](./image/SS-head.jpg)
