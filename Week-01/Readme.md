@@ -153,3 +153,33 @@
 ![](./image/SS-html-website-ahref.jpg)
 
 <b>semantic HTML</b>
+
+<p>Apa itu Semantic HTML? Semantic HTML adalah Tag HTML yang memiliki arti atau makna. <br/>
+Contoh Semantic HTML</p>
+
+![](./image/SS-html-semantic.jpg)
+
+<p>Pada Semantic HTML kita tidak perlu lagi footer dibuat di dalam div class.</p>
+
+![](./image/SS-html-semantic2.jpg)
+
+<p>Karna footer terdapat Tag nya sendiri yang mempermudah dalam pembuatan Website.</p>
+
+<b>Mendeploy Website ke Netlify</b>
+
+1. Buka Website Netlify https://app.netlify.com/
+2. Login menggunakan GitHub.
+   ![](./image/SS-html-netlify.jpg)
+3. Klik tab Sites dan klik Import from Git.
+   ![](./image/SS-html-netlify2.jpg)
+4. Pilih GitHub.
+   ![](./image/SS-html-netlify3.jpg)
+5. Pilih Repository dari GitHub yang ingin di Deploy.
+   ![](./image/SS-html-netlify4.jpg)
+6. Pada bagian Site Setting bisa di Skip / Scroll saja dan Klik Deploy Site.
+   ![](./image/SS-html-netlify5.jpg)
+   ![](./image/SS-html-netlify6.jpg)
+7. Website sudah di Deploy, selanjutnya tinggal klik Link tersebut dan membuat Website yang sudah di Deploy.
+   ![](./image/SS-html-netlify7.jpg)
+8. Website sudah bisa dibuka secara Online. https://celebrated-paletas-a17b4a.netlify.app/
+   ![](./image/SS-html-netlify8.jpg)
