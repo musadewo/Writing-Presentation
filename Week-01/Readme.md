@@ -50,3 +50,25 @@
 <b>Apa itu Git & GitHub? Kenapa Git & GitHub menjadi tool yang wajib digunakan?</b>
 
 <p><b>Git</b> adalah adalah aplikasi yang dapat melacak setiap perubahan yang terjadi pada suatu folder atau file. <br/> <b>GitHub</b> adalah tempat atau platform untuk menyimpan source code suatu proyek dan melacak riwayat lengkap semua perubahan. Dan GitHub sebagai tempat berkaloborasi projects dalam sebuah team yang sama tanpa harus copy paste folder.</p>
+
+<b>Perbedaan antara Git dan GitHub</b>
+
+<p><b>Git</b> merupakan software berbasis Version Control System (VCS) yang bertugas untuk mencatat perubahan seluruh file atau repository suatu project. Sedangkan <b>GitHub</b> merupakan layanan cloud yang berguna untuk menyimpan dan mengelola sebuah project yang dinamakan repository (repo git).</p>
+
+<b>Alur kerja Git dan GitHub</b>
+
+<p><b>Git</b> sebagai Version Control System berguna untuk mencatat setiap perubahan dalam seluruh file atau respository, sedangkan <b>GitHub</b> tempat upload project yang telah dibuat secara local.</p>
+
+<b>Membuat Repository pada GitHub</b>
+
+- Buka Website GitHub dan Login.
+- klik tab Repositories dan klik New.
+  ![](./image/SS-repo-1.jpg)
+- Masukkan nama untuk repository nya dan pilih Public bila ingin dilihat oleh orang lain. Jika tidak ingin dilihat orang lain, pilih Private
+  ![](./image/SS-repo-2.jpg)
+- centang Add a README File bila ingin langsung membuat file Readme didalam repository dan Create repository.
+  ![](./image/SS-repo-3.jpg)
+
+<b>Command atau Perintah pada Git</b>
+
+-
