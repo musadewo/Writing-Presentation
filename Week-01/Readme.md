@@ -365,3 +365,37 @@ Contoh Semantic HTML</p>
 ```
 
 ![](./image/SS-css-flexbox.jpg)
+
+# Day 4 : Algorithm & Data Structures dan JS Dasar - Intro JavaScript
+
+## Algorithm & Data Structures
+
+<b>Apa itu Algorithm & Data Structures? dan apa maanfaat dan perbedaan dari Algorithm & Data Structures?</b>
+
+<p>Algoritma adalah deskripsi berupa step-step yang dibutuhkan untuk menyelesaikan suatu masalah, sedangkan Data Structures mengelola sebuah data.</p>
+
+<b>Algoritma Sederhana dan bahasa pemprograman</b>
+
+```algoritma
+Mulai
+Masukan bilangan pertama (A)
+Masukan Bilangan kedua (B)
+Hitung Hasil = A + B;
+Tampilkan Hasil
+Selesai
+```
+
+```javascript
+let bilpertama = 20;
+let bilkedua = 10;
+
+console.log(bilpertama + bilkedua);
+```
+
+![](./image/SS-js.jpg)
+
+<b>Big O Notation</b>
+
+<p>Big O Notation digunakan untuk mengukur tingkat kompleksitas suatu algoritma. Dengan Big O Notation dapat mempercepat proses operasi dan mengurangi pemakaian memori yang berlebihan karena program yang panjang.</p>
+
+## Algorithm & Data Structures
