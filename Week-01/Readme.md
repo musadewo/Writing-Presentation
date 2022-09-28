@@ -366,7 +366,7 @@ Contoh Semantic HTML</p>
 
 ![](./image/SS-css-flexbox.jpg)
 
-# Day 4 : Algorithm & Data Structures dan JS Dasar - Intro JavaScript
+# Day 4 : Algorithm & Data Structures dan JS Dasar - Intro JavaScrip
 
 ## Algorithm & Data Structures
 
@@ -412,7 +412,7 @@ console.log(bilpertama + bilkedua);
 ```
 
 3. Buka Browser, klik kanan kan klik inspect.
-4. Klik tab Console disebelah Elements
+4. Klik tab Console disebelah Elements <br/>
    ![](./image/SS-js2.jpg)
 
 <b>Tipe data pada Javascript</b>
@@ -422,12 +422,12 @@ console.log(bilpertama + bilkedua);
 1. number. Tipe data yang mengandung semua angka termasuk angka desimal. <br/>
    ![](./image/SS-js-number.jpg)
 2. string. grup karakter yang ada pada keyboard laptop/PC kita yaitu letters (huruf), number (angka), spaces (spasi), symbol, dan lainnya. <br/>
-   ![](./image/SS-js-string.jpg)
+   ![](./image/SS-js-string.jpg) <br/>
    ![](./image/SS-js-string-hasil.jpg)
 3. boolean. tipe data yang hanya mempunyai 2 buah nilai. <br/>
    ![](./image/SS-js-boolean.jpg)
 4. null. Tipe data yang diartikan bahwa sebuah variable/data tidak memiliki nilai. Null berbeda dengan string kosong. String kosong masih memiliki tipe data string. <br/>
-   ![](./image/SS-js-null.jpg)
+   ![](./image/SS-js-null.jpg) <br/>
    ![](./image/SS-js-null-hasil.jpg)
 5. Undefined. Tipe data yang merepresentasikan varibel/data yang tidak memiliki nilai. <br/>
    ![](./image/SS-js-undefined.jpg) <br/>
@@ -488,4 +488,88 @@ console.log(!mandi); // false
 
 let main = false;
 console.log(!main); // true
+```
+
+# Day 5 : JS Dasar - Conditional & Looping
+
+## Conditional
+
+<p>Conditional merupakan statement percabangan yang menggambarkan suatu kondisi. Conditional statement akan mengecek kondisi spesifik dan menjalankan perintah berdasarkan kondisi tersebut</p>
+
+<b>Contoh Conditional</b>
+
+1. IF Statement
+
+```js
+let laper = true;
+if (laper) {
+  console.log('makan');
+}
+```
+
+![](./image/SS-js-condition.jpg) 2. IF … ELSE Statement
+
+```js
+let laper = false;
+if (laper) {
+  console.log('makan');
+} else {
+  console.log('skip, kenyang');
+}
+```
+
+![](./image/SS-js-condition2.jpg) 3. IF … ELSE IF … Statement
+
+```js
+let lampu = 'hijau';
+if (lampu === 'merah') {
+  console.log('berhenti');
+} else if (lampu === 'kuning') {
+  console.log('alon - alon');
+} else {
+  console.log('jalan');
+}
+```
+
+![](./image/SS-js-condition3.jpg)
+
+## Looping
+
+<p>Looping adalah statement yang mengulang sebuah instruksi hingga kondisi terpenuhi atau jika kondisi stop/berhenti tercapai.</p>
+
+<b>Macam - Macam perulangan pada Javascript</b>
+
+1. Manual Loop
+
+```js
+console.log(1);
+console.log(2);
+console.log(3);
+console.log(4);
+console.log(5);
+```
+
+![](./image/SS-js-looping.jpg)
+
+2. FOR LOOP
+<p>Gunakan For Loop bila mengetahui seberapa banyak nilai pasti untuk pengulangan.</p>
+
+```js
+let angka = 1;
+for (angka; angka <= 5; angka++) {
+  console.log(angka);
+}
+```
+
+![](./image/SS-js-looping2.jpg)
+
+3. WHILE LOOP
+<p>Gunakan WHile Loop bila tidak mengetahui seberapa banyak nilai pasti untuk pengulangan.</p>
+
+```js
+let angka = 1;
+while (angka <= 5) {
+  console.log(angka);
+  angka++;
+}
 ```
