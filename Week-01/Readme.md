@@ -168,11 +168,11 @@ Contoh Semantic HTML</p>
 <b>Mendeploy Website ke Netlify</b>
 
 1. Buka Website Netlify https://app.netlify.com/
-2. Login menggunakan GitHub.
+2. Login menggunakan GitHub. <br/>
    ![](./image/SS-html-netlify.jpg)
 3. Klik tab Sites dan klik Import from Git.
    ![](./image/SS-html-netlify2.jpg)
-4. Pilih GitHub.
+4. Pilih GitHub. <br/>
    ![](./image/SS-html-netlify3.jpg)
 5. Pilih Repository dari GitHub yang ingin di Deploy.
    ![](./image/SS-html-netlify4.jpg)
@@ -183,3 +183,185 @@ Contoh Semantic HTML</p>
    ![](./image/SS-html-netlify7.jpg)
 8. Website sudah bisa dibuka secara Online. https://celebrated-paletas-a17b4a.netlify.app/
    ![](./image/SS-html-netlify8.jpg)
+
+# Day 3 : CSS
+
+<b>Apa itu CSS dan apa Peran CSS dalam HTML ?</b>
+
+<p>CSS (Cascading Style Sheets) adalah bahasa yang digunakan untuk mendesain halaman website. Seperti pengertiannya, CSS memiliki Peran sebagai mendesain halaman Website menjadi lebih menarik.</p>
+
+<b>Menyisipkan CSS kedalam HTML</b>
+
+<p>Terdapat 3 cara dalam menyisipkan CSS kedalam HTML</p>
+
+1. Internal CSS. CSS dimasukkan langusng di dalam HTML menggunakan tag < style >.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebsiteKu</title>
+    <style>
+      p {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hallo World!</h1>
+    <p>Nama Saya Muhammad Sadewo Wicaksono</p>
+    <a href="https://www.google.com/">google</a>
+    <p>Saya sedang Stupen di SKilvul</p>
+    <img src="./img/koeching.jpg" alt="gambar kucing 1" />
+    <img src="https://www.greeners.co/wp-content/uploads/2021/03/Kucing-Domestik-3.jpg" alt="gambar kucing 2" />
+  </body>
+</html>
+```
+
+![](./image/SS-css.jpg)
+
+2. Eksternal CSS. CSS terpisah dengan html, dan mengharuskan membuat file dengan ekstensi .css.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>WebsiteKu</title>
+    <style>
+      p {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hallo World!</h1>
+    <p>Nama Saya Muhammad Sadewo Wicaksono</p>
+    <a href="https://www.google.com/">google</a>
+    <p>Saya sedang Stupen di SKilvul</p>
+    <img src="./img/koeching.jpg" alt="gambar kucing 1" />
+    <img src="https://www.greeners.co/wp-content/uploads/2021/03/Kucing-Domestik-3.jpg" alt="gambar kucing 2" />
+  </body>
+</html>
+```
+
+![](./image/SS-css2.jpg)
+
+3. Inline CSS. CSS langsung disematkan kedalam element HTML.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>WebsiteKu</title>
+    <style>
+      p {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hallo World!</h1>
+    <p>Nama Saya Muhammad Sadewo Wicaksono</p>
+    <p style="color: red">inline css</p>
+    <a href="https://www.google.com/">google</a>
+    <p>Saya sedang Stupen di SKilvul</p>
+    <img src="./img/koeching.jpg" alt="gambar kucing 1" />
+    <img src="https://www.greeners.co/wp-content/uploads/2021/03/Kucing-Domestik-3.jpg" alt="gambar kucing 2" />
+  </body>
+</html>
+```
+
+![](./image/SS-css3.jpg)
+
+<b>Tag dasar dan styling pada CSS</b>
+
+1. < link >. Tag link berguna untuk menghubungkan file CSS dengan file HTML.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+```
+
+2. < style >. Tag style biasanya digunakan langsung didalam file HTML nya.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      p {
+        color: red;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <p>coba</p>
+    <b style="color: blue;">coba 2</b>
+  </body>
+</html>
+```
+
+<b>Flexbox pada CSS</b>
+
+<p>Flexbox adalah cara untuk mengatur layout. Flexbox memiliki kemampuan untuk menyesuaikan layout secara otomatis. Karena hal itu Flexbox direkomendasikan karena penggunaannya yang mudah dan didukung oleh kebanyakan browser.</p>
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">item</div>
+      <div class="item">item</div>
+      <div class="item">item</div>
+      <div class="item">item</div>
+      <div class="item">item</div>
+    </div>
+  </body>
+</html>
+```
+
+```css
+.container {
+  display: flex;
+  border: 5px solid blue;
+}
+.item {
+  border: 1px solid white;
+  width: 100px;
+  height: 100px;
+  background-color: brown;
+}
+```
+
+![](./image/SS-css-flexbox.jpg)
