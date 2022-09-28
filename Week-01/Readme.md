@@ -398,4 +398,94 @@ console.log(bilpertama + bilkedua);
 
 <p>Big O Notation digunakan untuk mengukur tingkat kompleksitas suatu algoritma. Dengan Big O Notation dapat mempercepat proses operasi dan mengurangi pemakaian memori yang berlebihan karena program yang panjang.</p>
 
-## Algorithm & Data Structures
+## JS Dasar - Intro JavaScript
+
+<p>Javascript adalah bahasa pemograman yang sangat powerful yang digunakan untuk logic pada sebuah website. Javascript juga dapat membuat website menjadi interaktif dan dinamis </p>
+
+<b>Menjalankan Javascript</b>
+
+1. Pertama buat file .html dan buat file .js
+2. Hubungkan kedua file dengan
+
+```html
+<script src="script.js"></script>
+```
+
+3. Buka Browser, klik kanan kan klik inspect.
+4. Klik tab Console disebelah Elements
+   ![](./image/SS-js2.jpg)
+
+<b>Tipe data pada Javascript</b>
+
+<p>Terdapat 6 tipe data fundamental pada Javascript, yaitu number, string, boolean, null, undefined, dan object.</p>
+
+1. number. Tipe data yang mengandung semua angka termasuk angka desimal. <br/>
+   ![](./image/SS-js-number.jpg)
+2. string. grup karakter yang ada pada keyboard laptop/PC kita yaitu letters (huruf), number (angka), spaces (spasi), symbol, dan lainnya. <br/>
+   ![](./image/SS-js-string.jpg)
+   ![](./image/SS-js-string-hasil.jpg)
+3. boolean. tipe data yang hanya mempunyai 2 buah nilai. <br/>
+   ![](./image/SS-js-boolean.jpg)
+4. null. Tipe data yang diartikan bahwa sebuah variable/data tidak memiliki nilai. Null berbeda dengan string kosong. String kosong masih memiliki tipe data string. <br/>
+   ![](./image/SS-js-null.jpg)
+   ![](./image/SS-js-null-hasil.jpg)
+5. Undefined. Tipe data yang merepresentasikan varibel/data yang tidak memiliki nilai. <br/>
+   ![](./image/SS-js-undefined.jpg) <br/>
+   ![](./image/SS-js-undefined-hasil.jpg)
+6. object. Tipe data yang mengkoleksi data yang saling berhubungan (related). Tipe data pbject dapat menyimpan data dengan tipe data apapun (number, string, boolean, dan lainnya). <br/>
+   ![](./image/SS-js-object.jpg)
+
+<b>Operator pada Javascript</b>
+
+- Assignment Operator (=). Assignment operator digunakan untuk menyimpan sebuah nilai pada variabel.
+
+```js
+let nama = 'Muhammad Sadewo Wicaksono';
+```
+
+- Arithmetic Operator. Arithmetic operator adalah operator yang melibatkan operasi matematika.
+
+```js
+consol.log(1 + 1); // Prints 2
+consol.log(4 - 2); // Prints 2
+consol.log(5 * 3); // Prints 15
+consol.log(10 / 2); // Prints 5
+consol.log(11 % 3); // Prints 2
+```
+
+- Comparison Operator. Comparison operator adalah operator yang membandingkan satu nilai dengan nilai lainnya. Hasil operasi yang melibatkan comparison operator adalah antara true or false
+
+```js
+10 > 8; // Prints 'true'
+4 > 5; // Prints 'false'
+```
+
+- Logical Operator. Logical operator biasa digunakan untuk sebuah CONDITIONAL pada pemograman. Menghasilkan nilai BOOLEAN yaitu TRUE or FALSE.
+<p>AND (&&) akan menghasilkan nilai true jika kedua atau semua premis bernilai TRUE.</p>
+
+```js
+console.log(true && true); // true
+console.log(true && false); // false
+console.log(false && true); // false
+console.log(false && true && true); // false
+console.log(true && true && true); // true
+```
+
+<p>OR (||) akan menghasilkan nilai true jika salah satu premis mengandung nilai TRUE</p>
+
+```js
+console.log(true || true); // true
+console.log(true || false); // true
+console.log(false || false || true); // true
+console.log(false || false); // false
+```
+
+<p>NOT (!) akan membalikkan sebuah nilai BOOLEAN. TRUE menjadi FALSE dan sebaliknya.</p>
+
+```js
+let mandi = true;
+console.log(!mandi); // false
+
+let main = false;
+console.log(!main); // true
+```
