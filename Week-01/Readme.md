@@ -71,4 +71,11 @@
 
 <b>Command atau Perintah pada Git</b>
 
--
+- git add. Command yang digunakan untuk menambahkan file baru di repository yang dipilih.
+  ![](./image/SS-git-add.jpg)
+- git commit. Command untuk menyimpan perubahan yang sudah dilakukan, namun tidak ada perubahan yang terjadi pada remote repository.
+  ![](./image/SS-git-commit.jpg)
+- git push. Command untuk mengirimkan perubahan file yang dilakukan setelah di commit ke remote repository.
+  ![](./image/SS-git-push.jpg)
+- git clone. Command membuat Salinan repository lokal.
+  ![](./image/SS-git-clone.jpg)
