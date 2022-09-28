@@ -28,11 +28,11 @@
   ![](./image/SS-head.jpg)
 - tail. Command untuk melihat beberapa line akhir dari sebuah file.
   ![](./image/SS-tail.jpg)
-- touch. Command untuk membuat sebuah file.
+- touch. Command untuk membuat sebuah file. <br/>
   ![](./image/SS-touch.jpg)
 - mkdir (make directory). Command untuk membuat sebuah direktori
   ![](./image/SS-mkdir.jpg)
-- cp (copy). Command untuk mengcopy (menyalin) file.
+- cp (copy). Command untuk mengcopy (menyalin) file. <br/>
   ![](./image/SS-cp.jpg)
 - cp -r (recursive copy). Command untuk mengcopy (menyalin) directory.
   ![](./image/SS-cp-r.jpg)
@@ -40,9 +40,9 @@
   ![](./image/SS-mv.jpg)
 - mv (rename). Command mv juga bisa untuk mengganti nama file atau direktori.
   ![](./image/SS-mv-rename.jpg)
-- rm (remove). Command untuk menghapus file.
+- rm (remove). Command untuk menghapus file. <br/>
   ![](./image/SS-rm.jpg)
-- rm -r (recursive remove). Command untuk menghapus direktori.
+- rm -r (recursive remove). Command untuk menghapus direktori. <br/>
   ![](./image/SS-rm-r.jpg)
 
 ## Git & GitHub Dasar
