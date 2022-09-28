@@ -77,5 +77,79 @@
   ![](./image/SS-git-commit.jpg)
 - git push. Command untuk mengirimkan perubahan file yang dilakukan setelah di commit ke remote repository.
   ![](./image/SS-git-push.jpg)
-- git clone. Command membuat Salinan repository lokal.
-  ![](./image/SS-git-clone.jpg)
+- git clone. Command membuat Salinan repository lokal. <br/>
+  ![](./image/SS-git-clone.jpg) <br/><br/>
+
+# Day 2 : HTML
+
+<b>Pengenalan HTML</b>
+
+<p>HTML adalah singkatan dari Hypertext Markup Language. HTML digunakan untuk menampilkan konten pada browser. Contoh konten yang dapat ditampilkan seperti Text, Image, Video, Link, dan masih banyak lainnya. Dan HTML bukan sebuah bahasa pemrograman (programming languange), melainkan sebuah markup languange. Karna HTML bukan sebuah bahasa pemrograman HTML tidak bisa dinamis mengelola data karna itu HTML bersifat static, yang hanya menampilkan konten saja.</p>
+
+<b>Tool Pendukung untuk membuat HTML</b>
+
+1. Browser (Chrome, Mozila, Opera, Microsoft Edge dan lain - lain).
+1. Code Editor (Visual Studio Code, Sublime Text, Lapce dan lain - lain).
+1. Ekstensi Khusus untuk Visual Studio Code (Prettier, Live Server, Auto Rename Tag, Auto Close Tag dan lain - lain).
+
+<b>Membuat HTML / Website Sederhana</b>
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebsiteKu</title>
+  </head>
+  <body>
+    <h1>Hallo World!</h1>
+    <p>Nama Saya Muhammad Sadewo Wicaksono</p>
+  </body>
+</html>
+```
+
+![](./image/SS-html-website.jpg)
+
+<b>Cara menjalankan HTML di Browser</b>
+
+<p>Terdapat 2 cara dalam menjalankan HTML, yaitu secara manual dengan memasukkan direktori file pada search bar browser dan dengan ekstensi live server yang ada di Visual Studio Code.</p>
+
+- Menjalankan secara manual. <br/>
+  ![](./image/SS-html-website-manual.jpg) <br/>
+  Penjelasan : Pada Search bar kita masukkan lokasi / tempat file html berada.
+- Menjalankan dengan Live Server <br/>
+  ![](./image/SS-html-website-liveserver.jpg) <br/>
+  Note : Diharuskan menginstall ekstension live server terlebih dahulu
+  ![](./image/SS-html-website.jpg) <br/>
+  Hasil nya sama seperti manual, tetapi tanpa harus mengetikkan lokasi file berada.
+
+<b>Tag Populer dalam HTML</b>
+
+- img (image). Tag tersebut berguna untuk menyisipkan gambar pada HTML.
+
+```html
+<img src="./img/koeching.jpg" alt="gambar kucing 1" /> <img src="https://www.greeners.co/wp-content/uploads/2021/03/Kucing-Domestik-3.jpg" alt="gambar kucing 2" />
+```
+
+![](./image/SS-html-website-kucing.jpg)
+
+- p (paragraph). Tag tersebut berguna untuk membuat paragraf pada HTML.
+
+```html
+<p>Nama Saya Muhammad Sadewo Wicaksono</p>
+<p>Saya sedang Stupen di SKilvul</p>
+```
+
+![](./image/SS-html-website-p.jpg)
+
+- a (a href). Tag tersebut berguna untuk membuat tulisan menjadi tulisan berlink.
+
+```html
+<a href="https://www.google.com/">google</a> ``
+```
+
+![](./image/SS-html-website-ahref.jpg)
+
+<b>semantic HTML</b>
