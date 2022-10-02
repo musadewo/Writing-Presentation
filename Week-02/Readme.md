@@ -80,4 +80,67 @@ console.log(hallow()); // memanggil dengan console.log
 
 <b>Parameter Function</b>
 
-<p>Parameter Function dapat menerima sebuah inputan data dan memproses data tersebut untuk melakukan task / tugas.</p>
+<p>Parameter Function dapat menerima sebuah inputan data dan memproses data tersebut untuk melakukan task / tugas. Saat membuat Function, harus memperhatikan data yang dibutuhkan. Misalnya mau membuat function pengurangan dengan 2 buah nilai. Data yang dibutuhkan adalah 2 buah nilai tersebut.</p>
+
+![](./image/SS-js-parameterfunction.jpg)
+
+```js
+function pengurangan(a, b) {
+  return a - b;
+}
+```
+
+<b>Argumen Function</b>
+
+<p>Argumen adalah nilai yang digunakan saat memanggil function. Jumlah argumen harus sama dengan jumlah parameternya. Jadi jika di function penambahan ada 2 parameter nilai saat membuat function. Saat memanggil function gunakan 2 buah nilai argumen.</p>
+
+![](./image/SS-js-argument2.jpg)
+
+```js
+function pengurangan(a, b) {
+  return a - b;
+}
+
+console.log(pengurangan(10, 5));
+```
+
+![](./image/SS-js-argument.jpg)
+
+<b>Default Parameters</b>
+
+<p>Default paramaters digunakan untuk memberikan nilai awal/default pada parameter function. Default parameters bisa digunakan jika ingin menjaga function agar tidak error (undefined) saat dipanggil tanpa argumen.</p>
+
+```js
+// Default Parameter pada Reguler Function
+function hellow(name = 'Stranger', greet = 'Hello') {
+  console.log(`${greet} ${name}!`);
+}
+
+hellow('Sadewo', 'Hai');
+hellow();
+```
+
+```js
+// Default Parameter pada Arrow Function
+const hellow = (name = 'Stranger', greet = 'Hello') => console.log(`${greet} ${name}!`);
+
+hellow('Sadewo', 'Hai');
+hellow();
+```
+
+![](./image/SS-js-defaultparameters.jpg)
+
+<b>Arrow Function</b>
+
+<p>Arrow function adalah cara lain menuliskan function. Ini adalah fitur terbaru yang ada pada ES6 (Javascript Version)</p>
+
+```js
+const pengurangan = (a, b) => {
+  return a - b;
+};
+console.log(pengurangan(4, 2));
+```
+
+![](./image/SS-js-arrowfunction.jpg)
+
+# Day 2 : Js Dasar - Data Type Built in Prototype & Method
