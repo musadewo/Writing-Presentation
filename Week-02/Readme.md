@@ -421,3 +421,231 @@ document.querySelectorAll('css');
 ```
 
 # Day 4 : JS Dasar - DOM Manipulating Elements & Styles
+
+## JS Dasar - DOM Manipulating Elements
+
+<b>Macam - macam DOM Manipulating Elements</b>
+
+- innerHTML <br/> innerHTML adalah properti dari Elemen yang memungkinkan Anda untuk mendapatkan atau mengatur markup HTML yang terkandung di dalam elemen.
+
+```html
+<ul id="menu">
+  <li>Home</li>
+  <li>Services</li>
+</ul>
+```
+
+```js
+let menu = document.getElementById('menu');
+console.log(menu.innerHTML);
+```
+
+![](./image/SS-js-innerHTML.jpg)
+
+- CreateElement <br/> CreateElement berfungsi untuk menambahkan Element tanpa harus membuat di file HTML.
+
+```js
+let p = document.createElement('p');
+p.innerText = 'ini adalah paragraf';
+```
+
+- append <br/> append() menyisipkan satu set objek Node atau objek DOM String. append() dilakukan setelah CreateElement().
+
+```js
+app.append(p);
+```
+
+![](./image/SS-js-append.jpg)
+
+- appendChild <br/> apeendChild() menambahkan simpul (elemen) sebagai anak terakhir dari sebuah elemen.
+
+```js
+let p2 = document.createElement('p');
+p2.innerText = 'paragraf ke-2';
+app.appendChild(p2);
+```
+
+![](./image/SS-js-appendchild.jpg)
+
+- remove <br/> remove() menghapus elemen (atau node) dari dokumen.
+
+```js
+let end = document.getElementById('end');
+end.remove();
+```
+
+![](./image/SS-js-remove.jpg)
+
+<b>Attribute</b>
+
+```js
+console.log(link.attributes); // [] list attribute
+console.log(link.getAttribute('href')); // ambil isi attribute
+link.setAttribute('id', 'google'); // add attribute
+```
+
+## JS Dasar - DOM Styles
+
+<b>Memberikan Style dari Element</b>
+
+```js
+let link = document.getElementsByClassName('link')[0];
+
+link.style.color = 'black';
+link.style.border = '1px solid black';
+link.style.padding = '5px 20px';
+link.style.backgroundColor = 'cyan';
+link.style.removeProperty('border'); // menghapus style property
+```
+
+![](./image/SS-js-style.jpg)
+
+# Day 5 : JS Dasar - DOM Events & Forms
+
+## JS Dasar - DOM Events
+
+<p>Events adalah Kejadian/kegiatan/interaksi yang terjadi pada website.</p>
+
+<p>Terdapat 3 cara dalam memberikan event</p>
+
+1. Menambahkan di HTML Attribute nya <br/>
+
+```js
+<h1 onclick="alert('Hallow')">Hallow</h1>
+```
+
+2. Menambahkan Event Property <br/>
+
+```js
+let kalimat = document.getElementById('kalimat');
+kalimat.onclick = function () {
+  alert('ini dari kalimat');
+};
+```
+
+3. Menambahkan addEventListener() <br/>
+
+```js
+let button = document.getElementById('btn');
+button.addEventListener('click', function (event) {
+  console.log(event.target);
+  alert('ini dari button');
+});
+```
+
+<b>Counter menggunakan Selecting Element dan addEventListener</b>
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <!-- Buat counter -->
+    <div>
+      <button id="decrement">-</button>
+      <span id="counter">0</span>
+      <button id="increment">+</button>
+    </div>
+  </body>
+</html>
+```
+
+```js
+let btnDecrement = document.getElementById('decrement');
+let btnIncrement = document.getElementById('increment');
+let counter = document.getElementById('counter');
+
+let angka = 0;
+
+btnIncrement.addEventListener('click', function () {
+  angka = angka + 1;
+  counter.innerText = angka;
+});
+
+btnDecrement.addEventListener('click', function () {
+  angka--;
+  counter.innerText = angka;
+});
+```
+
+![](./image/SS-js-counter.jpg) <br/>
+![](./image/SS-js-counter2.jpg) <br/>
+![](./image/SS-js-counter3.jpg)
+
+## JS Dasar - DOM Forms
+
+<b>Membuat Form Login</b>
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <form id="sign-in">
+        <h1>Sign In</h1>
+
+        <div class="field">
+          <label for="username">username</label>
+          <input type="text" id="username" name="username" />
+        </div>
+
+        <div class="field">
+          <label for="password">password</label>
+          <input type="text" id="password" name="password" />
+        </div>
+
+        <button type="submit">login</button>
+      </form>
+    </div>
+  </body>
+</html>
+```
+
+```js
+let loginForm = document.querySelector('#sign-in');
+let inputUsername = document.querySelector('#username');
+let inputPassword = document.querySelector('#password');
+
+let user = {
+  username: 'sadewo',
+  password: '123',
+};
+
+loginForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  let userLogin = {
+    username: inputUsername.value,
+    password: inputPassword.value,
+  };
+
+  console.log(userLogin);
+
+  let login = userLogin.username == user.username && userLogin.password == user.password;
+
+  if (login) {
+    console.log('selamat anda berhasil login');
+  } else {
+    console.log('username dan password anda salah');
+  }
+
+  loginForm.reset();
+});
+```
+
+![](./image/SS-js-form.jpg)
