@@ -144,3 +144,194 @@ console.log(pengurangan(4, 2));
 ![](./image/SS-js-arrowfunction.jpg)
 
 # Day 2 : Js Dasar - Data Type Built in Prototype & Method
+
+<p>JavaScript adalah bahasa dinamis dengan tipe dinamis. Variabel dalam JavaScript tidak secara langsung terkait dengan jenis nilai tertentu, dan variabel apa pun dapat diberi (dan ditetapkan ulang) nilai dari semua jenis.</p>
+
+```js
+let i = 42; // i sekarang adalah tipe data number
+i = 'bar'; // i sekarang adalah tipe data string
+i = true; // i sekarang adalah tipe data boolean
+```
+
+<p>JavaScript juga merupakan bahasa yang diketik dengan lemah, yang berarti memungkinkan konversi tipe implisit saat operasi melibatkan tipe yang tidak cocok, alih-alih melempar kesalahan tipe.</p>
+
+<b>JavaScript types</b>
+
+<p>Pada JavaScript terdapat 2 jenis tipe data, yaitu tipe data primitif dan tipe data object (non primitif).</p>
+<p>Tipe data primitif : </p>
+
+1. String
+2. Number
+3. BigInt
+4. Boolean
+5. Null
+6. Undefined
+7. Symbol
+
+<p>Tipe data object (non primitif)</p>
+
+1. Array
+2. Object
+3. Map
+4. Date
+5. Masih banyak lagi
+
+<b>Menemukan jenis tipe data menggunakan typeof</b>
+
+```js
+let buah = 'mangga';
+
+console.log(typeof buah);
+```
+
+![](./image/SS-js-typeof.jpg)
+
+```js
+let angka = 123218;
+
+console.log(typeof angka);
+```
+
+![](./image/SS-js-typeof2.jpg)
+
+<b>Memeriksa berapa banyak karakter dalam 1 kata menggunkan length.</b>
+
+```js
+let buah = 'mangga';
+
+console.log(buah.length);
+```
+
+![](./image/SS-js-length.jpg)
+
+## String
+
+<p>Objek String digunakan untuk mewakili dan memanipulasi urutan karakter. <br/>
+String berguna untuk menyimpan data yang dapat direpresentasikan dalam bentuk teks. Beberapa operasi yang paling sering digunakan pada string adalah memeriksa panjangnya, membangun dan menggabungkannya menggunakan operator string + dan +=, memeriksa keberadaan atau lokasi substring dengan metode indexOf(), atau mengekstrak substring dengan substring () metode.</p>
+
+<b>Membuat string menjadi huruf kapital dengan method toUpperCase() dan menjadi huruf kecil dengan method toLowerCase()</b>
+
+<p>toUpperCase()</p>
+
+```js
+let buah = 'mangga';
+
+console.log(buah.toUpperCase());
+```
+
+![](./image/SS-js-toUpperCase.jpg)
+
+<p>Metode toUpperCase() mengembalikan nilai string panggilan yang dikonversi menjadi huruf besar.</p>
+<br/>
+
+<p>toLowerCase()</p>
+
+```js
+let buah = 'JeRuK';
+
+console.log(buah.toLowerCase());
+```
+
+![](./image/SS-js-toLowerCase.jpg)
+
+<p>Metode toLowerCase() mengembalikan nilai string panggilan yang dikonversi ke huruf kecil.</p>
+<br/>
+
+<b>Mencari / Mengembalikan 1 karakter dalam string menggunakan method charAt()</b>
+
+```js
+let buah = 'JeRuK';
+
+console.log(buah.charAt(2));
+```
+
+![](./image/SS-js-charat.jpg)
+
+<p>Kenapa pada hasil yang ditampilkan adalah R ? kenapa bukan e yang ditampilkan ? <br/>
+Karena Method CharAt() mengembalikan 1 karakter sesuai dengan Array jadinya indexnya dimulai dari 0 bukan 1, karena itulah yang dikembalikan adalah R.</p>
+
+<b>Mencari 1 karakter atau 1 kata dalam sebuah string menggunakan method includes()</b>
+
+```js
+let buah = 'JeRuK';
+
+console.log(buah.includes('R'));
+```
+
+![](./image/SS-js-includes.jpg)
+
+<p>Pada method includes(), ketika karakter / kata yang ingin dicari dalam string ketemu maka akan menampilkan nilainya true, bila tidak menemukannya maka nilainya false</p>
+
+<b>Method split() memisahkan data dan mengubahnya menjadi data array</b>
+
+```js
+let kalimat = 'dengan menggunakan split(), kita dapat memisahkan sebuah string menjadi data array';
+console.log('BEFORE', kalimat);
+console.log('AFTER', kalimat.split(' '));
+```
+
+![](./image/SS-js-split.jpg)
+
+<p>Pada codingan diatas, method split membutuhkan pola dan membagi string yang dituju, dan mengubahnya menjadi array.</p>
+
+<b>Method Number.isNan / isNan</b>
+
+![](./image/SS-js-NaN.jpg)
+
+<p>Method Number.isNaN() menentukan apakah nilai yang diteruskan adalah NaN dan tipenya adalah Number. Sedangakan Method isNaN() menentukan apakah nilai yang diteruskan adalah NaN (NaN = Not A Number).</p>
+
+<b>Method toString()</b>
+
+![](./image/SS-js-toString.jpg)
+
+<p>Method toString berfungsi untuk merubah Number / angka menjadi String.</p>
+
+<b>Method toFixed()</b>
+
+![](./image/SS-js-tofixed.jpg)
+
+<p>Method toFixed berfungsi untuk mengambil atau menampilkan angka dibelakang koma (,) atau titik (.)</p>
+
+<b>Math : Properti</b>
+
+- Math.E <br/> Properti Math.E mewakili bilangan Euler, basis logaritma natural, e, yang kira-kira 2,718. <br/>
+  ![](./image/SS-js-math.e.jpg)
+
+- Math.PI <br/> Properti Math.PI mewakili rasio keliling lingkaran dengan diameternya, kira-kira 3,14159 <br/>
+  ![](./image/SS-js-mathpi.jpg)
+
+<b>Math : Method</b>
+
+- Math.abs() <br/> Function Math.abs() mengembalikan nilai absolut dari sebuah angka. <br/>
+  ![](./image/SS-js-mathabs.jpg)
+
+- Math.ceil() <br/> Function Math.ceil() selalu membulatkan dan mengembalikan bilangan bulat yang lebih kecil yang lebih besar dari atau sama dengan angka yang diberikan. <br/>
+  ![](./image/SS-js-mathceil.jpg)
+
+- Math.floor() <br/> Function Math.floor() selalu membulatkan ke bawah dan mengembalikan bilangan bulat terbesar yang kurang dari atau sama dengan angka tertentu. <br/>
+  ![](./image/SS-js-mathfloor.jpg)
+
+- Math.round() <br/> Function Math.round() mengembalikan nilai angka yang dibulatkan ke bilangan bulat terdekat. <br/>
+  ![](./image/SS-js-mathround.jpg)
+
+- Math.random() <br/> Function Math.random () mengembalikan angka acak antara 0 (inklusif), dan 1 (eksklusif).
+  <br/>
+  ![](./image/SS-js-mathrandom.jpg)
+
+<b>Prototype</b>
+
+```js
+function Person(first, middle, last, age) {
+  this.firstName = first;
+  this.middleName = middle;
+  this.lastName = last;
+  this.age = age;
+}
+
+const Saya = new Person('Muhammad', 'Sadewo', 'Wicaksono', 50);
+document.getElementById('p').innerHTML = 'Nama Saya ' + Saya.middleName;
+```
+
+![](./image/SS-js-prototype.jpg)
+
+# Day 3 : Js Dasar - DOM - Introduction, Selecting Elements, dan DOM - Traversing Elements
