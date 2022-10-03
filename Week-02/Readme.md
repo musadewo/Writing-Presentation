@@ -334,4 +334,90 @@ document.getElementById('p').innerHTML = 'Nama Saya ' + Saya.middleName;
 
 ![](./image/SS-js-prototype.jpg)
 
-# Day 3 : Js Dasar - DOM - Introduction, Selecting Elements, dan DOM - Traversing Elements
+# Day 3 : Js Dasar - DOM Introduction, Selecting Elements, dan DOM Traversing Elements
+
+## JS Dasar - DOM Introduction
+
+<p>Document Object Model (DOM) adalah representasi data dari objek yang terdiri dari struktur dan konten dokumen di web. Panduan ini akan memperkenalkan DOM, melihat bagaimana DOM merepresentasikan dokumen HTML di memori dan bagaimana menggunakan API untuk membuat konten web dan aplikasi.</p> 
+<p>Document Object Model (DOM) adalah antarmuka pemrograman untuk dokumen web. Ini mewakili halaman sehingga program dapat mengubah struktur, gaya, dan konten dokumen.</p> 
+<p>DOM bukan bagian dari bahasa JavaScript, melainkan Web API yang digunakan untuk membangun situs web.</p>
+<p>DOM adalah jembatan atau penghubung supaya bahasa pemrogramaan dapat berinteraksi dengan dokumen HTML. Dengan DOM, JavaScript (JS) dapat memanipulasi HTML.</p> <br/>
+
+## JS Dasar - Selecting Elements & Traversing Elements
+
+<b>Macam - macam Selector Elements pada JS</b>
+
+- getElementById(); <br/> getElementById digunakan untuk menyeleksi elemen dengan menggunakan ID pada element tersebut. Element ID harus unik tidak boleh ada yang sama dalam satu web. Jika ada yang sama, maka salah satunya tidak akan di perses.
+
+```js
+document.getElementById('saya');
+```
+
+```js
+let title = document.getElementById('title');
+console.log(title);
+```
+
+![](./image/SS-js-byid.jpg)
+
+- getElementsByClassName() <br/> getElementByClassName digunakan untuk menyeleksi elemen dengan menggunakan Class pada suatu elemen.
+
+```js
+document.getElementsByClassName('kelas');
+```
+
+```js
+let items = document.getElementsByClassName('item');
+console.log(items[2]);
+```
+
+![](./image/SS-js-byclass.jpg)
+
+- getElementsByName() <br/> getElementByName digunakan untuk menyeleksi elemen berdasarkan attribute name pada elemen/tag (name=”name_value“).
+
+```js
+document.getElementsByName('nama');
+```
+
+- getElementsByTagName() <br/> getElementByTagName digunakan untuk menyeleksi elemen berdasarkan nama tag/elemen pada HTML.
+
+```js
+document.getElementsByTagName('tagname');
+```
+
+```js
+let itemByTag = document.getElementsByTagName('li');
+console.log(itemByTag[1]);
+console.log(itemByTag.item(1));
+console.log(itemByTag.length);
+```
+
+![](./image/SS-js-bytagname.jpg)
+
+- querySelector() <br/> querySelector menyeleksi elemen dengen menggunakan CSS Selector.
+
+```js
+document.querySelector('css');
+```
+
+```js
+let listQuery = document.querySelector('.list');
+console.log(listQuery);
+```
+
+![](./image/SS-js-query.jpg)
+
+```js
+console.log(itemQuery.parentElement);
+console.log(itemQuery.closest('.list'));
+```
+
+![](./image/SS-js-query2.jpg)
+
+- querySelectorAll() <br/> querySelectorAll menyeleksi semua elemen menggunakan CSS selector yang digunakan.
+
+```js
+document.querySelectorAll('css');
+```
+
+# Day 4 : JS Dasar - DOM Manipulating Elements & Styles
