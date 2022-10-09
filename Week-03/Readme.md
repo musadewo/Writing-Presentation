@@ -251,3 +251,317 @@ console.log(multiarr[2][1]); // Yang dipanggil adalah Gerbong ketiga (index 2) d
 ```
 
 ![](./image/SS-js-array18.png)
+
+# Day 2 : JS Intermediate Object
+
+## Object
+
+<p>Object adalah sebuah tipe data pada variabel yang menyimpan properti dan fungsi (method). Properti adalah data lengkap dari sebuah object. Method adalah action dari sebuah object. Apa saja yang dapat dilakukan dari suatu object. Object tidak mempunyai Index, tetapi Object memiliki Array of Object.</p>
+
+<b>Create Object</b>
+
+```js
+// Syntax Umum Object
+let nama_obj = {
+  property: "value",
+  property2: "value2",
+};
+```
+
+```js
+let orang = {
+  nama: "Sadewo",
+  umur: 20,
+  hobi: "Rebahan",
+  "nomor handphone": 086969696969,
+  // "nomor handphone" termasuk kedalam property, kenapa harus ditandai dengan double petik? karena nama property nya terdapat spasi (space). Untuk penggantinya bisa dengan nomor_handphone (Underscore).
+  // Object menghilangkan angka 0 (nol) pada value.
+};
+console.log(orang);
+```
+
+![](./image/SS-js-object.png)
+
+<b>Access Object</b>
+
+<p>Dalam mengakses object terdapat 2 cara, yaitu dengan dot notation dan bracket.</p>
+
+1. dot notation
+
+```js
+let orang = {
+  nama: "Sadewo",
+  umur: 20,
+  hobi: "Rebahan",
+  "nomor handphone": 086969696969,
+  // dot notation tidak bisa memanggil / mengakses property yang memiliki spasi seperti property nomor handphone.
+  // Cara mengatasinya dengan menggunakan Bracket.
+};
+console.log(orang.nama);
+```
+
+![](./image/SS-js-object2.png)
+
+2. Bracket
+
+```js
+let orang = {
+  nama: "Sadewo",
+  umur: 20,
+  hobi: "Rebahan",
+  "nomor handphone": 086969696969,
+};
+console.log(orang["nomor handphone"]);
+```
+
+![](./image/SS-js-object3.png)
+
+<b>CreateKey Object</b>
+
+<p>Penambahan Property pada Object tanpa memodifikasi Object tersebut, untuk memodifikasinya dapat menggunakan dot notation, dan Bracket.</p>
+
+1. dot notation.
+
+```js
+let buku = {
+  judul: "Jatoh kebawah",
+  penulis: "oyang",
+  "jumlah halaman": 500,
+};
+console.log(buku);
+buku.penerbit = "Sidu";
+console.log(buku);
+```
+
+![](./image/SS-js-object4.png)
+
+2. Bracket
+
+```js
+let buku = {
+  judul: "Jatoh kebawah",
+  penulis: "oyang",
+  "jumlah halaman": 500,
+};
+console.log(buku);
+buku.penerbit = "Sidu";
+console.log(buku);
+buku["tahun"] = 1999;
+console.log(buku);
+```
+
+![](./image/SS-js-object5.png)
+
+<p>Note : Untuk pengurutan Property pada Object sesuai dengan Alpahbet Ascending.</p>
+
+![](./image/SS-js-object6.png)
+
+<b>Assign Object</b>
+
+<p>Mengganti isi (Value) dari Object tanpa memodifikasi Object tersebut, untuk memodifikasinya dapat menggunakan dot notation, dan Bracket.</p>
+
+1. dot notation
+
+```js
+let hewan = {
+  nama: "kucing",
+  kaki: 4,
+  warna: "Oren",
+};
+console.log(hewan);
+hewan.nama = "hamster"; // Mengganti value pada Property nama menjadi hamster.
+hewan.warna = "coklat"; // Mengganti value pada Property warna menjadi coklat.
+console.log(hewan);
+```
+
+![](./image/SS-js-object7.png)
+
+2. Bracket
+
+```js
+let hewan = {
+  nama: "kucing",
+  kaki: 4,
+  warna: "Oren",
+};
+console.log(hewan);
+hewan["warna"] = "Putih"; // Mengganti value pada Property warna menjadi Putih.
+console.log(hewan);
+```
+
+![](./image/SS-js-object8.png)
+
+<b>Delete Object</b>
+
+<p>Menghapus (Delete) Property pada object tanpa memodifikasi Object tersebut, untuk memodifikasinya dapat menggunakan dot notation.</p>
+
+```js
+let orang = {
+  nama: "Sadewo",
+  umur: 20,
+  hobi: "Rebahan",
+  "nomor handphone": 086969696969,
+};
+console.log(orang);
+delete orang.hobi; // Menghapus Property hobi pada Object
+console.log(orang);
+```
+
+![](./image/SS-js-object9.png)
+
+<b>Method Object</b>
+
+<p>Object yang menampung Function. Function akan melakukan return didalam Object.</p>
+
+```js
+const greeting = {
+  //Function 1
+  welcome: function () {
+    return "Hallo World!";
+  },
+  //Function 2
+  say: function () {
+    return "!World Hallo";
+  },
+};
+console.log(greeting.welcome()); // Memanggil Function didalam Object
+console.log(greeting.say()); // Memanggil Function didalam Object
+```
+
+![](./image/SS-js-object10.png)
+
+<b>Nested Object</b>
+
+<p>Object yang didalamnya memiliki Object, seperti Multidimensi Array.</p>
+
+```js
+//Object
+let buku = {
+  judul: "Jatoh kebawah",
+  tahun: 1989,
+  //Object
+  penulis: {
+    penulis1: {
+      nama: "Bagas",
+      umur: 32,
+      kota: "Bekasi",
+    },
+    //Object
+    penulis2: {
+      nama: "Daffa",
+      umur: 28,
+      kota: "Bogor",
+    },
+  },
+};
+console.log(buku);
+console.log(buku.penulis.penulis1.nama); //Pemanggilan memerlukan semua object yang dilalui untuk dapat dipanggil.
+console.log(buku.penulis.penulis2.umur);
+```
+
+![](./image/SS-js-object11.png)
+
+<b>Loop Object</b>
+
+<p>Melakukan perulangan menggunakan Object</p>
+
+```js
+let orang = {
+  nama: "Sadewo",
+  umur: 20,
+  hobi: "Rebahan",
+  asal: "Jakarta",
+};
+// Key = Properti, orang = nama_object
+for (let key in orang) {
+  console.log(orang[key]);
+}
+```
+
+![](./image/SS-js-object12.png)
+
+<p>Looping dengan Nested Object</p>
+
+```js
+let buku = {
+  judul: "Jatoh kebawah",
+  tahun: 1989,
+  penulis: {
+    penulis1: {
+      nama: "Bagas",
+      umur: 32,
+      kota: "Bekasi",
+    },
+    penulis2: {
+      nama: "Daffa",
+      umur: 28,
+      kota: "Bogor",
+    },
+  },
+};
+console.log(buku);
+for (let key in buku.penulis.penulis1) {
+  console.log(buku.penulis.penulis1[key], "----ini dari nested");
+}
+```
+
+![](./image/SS-js-object13.png)
+
+<b>Array of Object</b>
+
+<p>Terdapat satu / lebih Array dalam 1 Variabel Object.</p>
+
+```js
+let users = [
+  {
+    nama: "Sadewo",
+    umur: 20,
+    alamat: "Condet",
+  },
+
+  {
+    nama: "Salsa",
+    umur: 19,
+    alamat: "Cikarang",
+  },
+  {
+    nama: "Aliya",
+    umur: 19,
+    alamat: "Depok",
+  },
+];
+console.log(users);
+```
+
+![](./image/SS-js-object14.png)
+
+<p>Method Map pada Array of Object</p>
+
+```js
+let users = [
+  {
+    nama: "Sadewo",
+    umur: 20,
+    alamat: "Condet",
+  },
+
+  {
+    nama: "Salsa",
+    umur: 19,
+    alamat: "Cikarang",
+  },
+  {
+    nama: "Aliya",
+    umur: 19,
+    alamat: "Depok",
+  },
+];
+console.log(users);
+let data = users.map((el) => {
+  console.log(el.nama);
+});
+```
+
+![](./image/SS-js-object15.png)
+
+# Day 3 :
