@@ -236,7 +236,7 @@ console.log(buahSegar);
 
 ![](./image/SS-js-array17.png)
 
-<b>Array Multidimensional</b>
+## Array Multidimensional
 
 <p>Array Multidimensi itu Array di dalam array kayak gerbong kereta, didalam kereta terdapat ruang.</p>
 
