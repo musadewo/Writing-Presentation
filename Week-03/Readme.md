@@ -680,3 +680,150 @@ function faktorial(n) {
 }
 console.log(faktorial(6));
 ```
+
+# Day 4 : JS Intermediate Asynchronous Introduction & Promise
+
+<p>JS adalah bahasa yang single-thread (hanya memiliki 1 jalur), non-blocking (jika proses A mengalami hambatan, maka non-blocking akan menjalankan proses lainnya terlebih dahulu.), dan asyncronous(Proses dapat diselak dan proses yang sebelumnya belum selesai akan diproses kembali.)</p>
+
+![](./image/SS-js-asyn.png)
+
+<p>Asynchronous terdapat 3 Kunci, yaitu Callback, Promise, dan async await</p>
+
+- Callback <br/> Callback adalah Function dijadikan sebagai argumen.
+
+```js
+console.log("A");
+
+// B akan didahului oleh C.
+setTimeout(() => {
+  console.log("B");
+}, 1000);
+
+console.log("C");
+```
+
+![](./image/SS-js-asyn2.png)
+
+<p>Asynchronous akan mendahulukan proses lain, bila proses pertama mengalami hambatan (seperti console b yang memerlukan waktu 1 detik agar muncul).</p>
+
+- Promise <br/> Promise mewakili penyelesaian (atau kegagalan) akhirnya dari operasi asinkron dan nilai yang dihasilkannya.
+
+```js
+// Pembuatan Promise
+let jalan = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Jalan terpenuhi");
+  }, 2000);
+});
+
+// Pemanggilan Promise
+jalan.then((result) => {
+  console.log(result);
+});
+```
+
+![](./image/SS-js-asyn3.png)
+
+<p>Promise dengan .then() & .catch()</p>
+
+```js
+let jalan = new Promise((resolve, reject) => {
+  if (true) {
+    resolve("Jalan"); // Jika True maka Resolve
+  }
+  reject("Mager"); // Jika False maka Reject
+});
+
+jalan
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+```
+
+![](./image/SS-js-asyn4.png)
+![](./image/SS-js-asyn5.png)
+
+<p>Promise dari Function</p>
+
+```js
+let jalan = (kondisi) => {
+  return new Promise((resolve, reject) => {
+    if (kondisi == "Jalan") {
+      resolve("Jalan-jalan");
+    }
+    reject("Mager");
+  });
+};
+
+jalan("Jalan") // Jika Jalan, maka .then akan berjalan
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((err) => {
+    //jika Mager, maka catch yang berjalan
+    console.log(err);
+  });
+```
+
+![](./image/SS-js-asyn6.png)
+![](./image/SS-js-asyn7.png)
+
+# Day 5 : JS Intermediate Web Storage
+
+<p>Web Storage akan menyimpan data secara lokal di dalam Browser Pengguna (User) <br/>
+Web Storage berbeda dengan Cookie, walau keduanya sama sama dapat menyimpan data. Tetapi Web Storage lebih aman dan dapat menampung data besar secara local, tanpa mempengaruhi kinerja website. <br/>
+Web Storage biasanya menyimpan Preferensi User, Setting score, dan lain - lain.</p>
+
+<p>Jangan menggunakan Web Storage sebagai tempat menyimpan Data sensitif seperti Password atau Otentikasi.</p>
+
+<p>Terdapat 2 jenis Storage pada Web Storage, yaitu Local Storage dan Session Storage.</p>
+
+- Local Storage <br/> Data pada Local Storage tidak akan Kadaluarsa (Expiration) / hilang, mau Browsernya di close ataupun devicenya direstart, data masih ada di Local Browser.
+
+```js
+const todos = [];
+
+document.querySelector("form").addEventListener("submit", (ev) => {
+  ev.preventDefault(); // Agar Browser tidak merefresh
+
+  const userInput = document.querySelector("input").value;
+  const li = document.createElement("li");
+  li.innerText = userInput;
+
+  todos.push(userInput); // di Push dengan bentuk Array
+  localStorage.setItem("todo", todos); // disimpan kedalam local storage
+  console.log(localStorage.getItem("todo")); // memanggil data dari local storage
+
+  const container = document.querySelector("#list-container");
+  container.appendChild(li);
+});
+```
+
+![](./image/SS-js-ws.png)
+![](./image/SS-js-ws2.png)
+
+- Session Storage <br/> Data pada Session Storage akan hilang bila Tab browser di close (tutup).
+
+```js
+const todos = [];
+
+document.querySelector("form").addEventListener("submit", (ev) => {
+  ev.preventDefault();
+
+  const userInput = document.querySelector("input").value;
+  const li = document.createElement("li");
+  li.innerText = userInput;
+
+  todos.push(userInput);
+  sessionStorage.setItem("todo", todos);
+  console.log(sessionStorage.getItem("todo"));
+
+  const container = document.querySelector("#list-container");
+  container.appendChild(li);
+});
+```
+
+![](./image/SS-js-ws3.png)
