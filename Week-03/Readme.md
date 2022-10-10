@@ -564,4 +564,119 @@ let data = users.map((el) => {
 
 ![](./image/SS-js-object15.png)
 
-# Day 3 :
+# Day 3 : JS Intermediate Modules & Recursive
+
+## JS Intermediate Modules
+
+<p>JS Modules adalah cara untuk memisahkan kode ke file yang berbeda. Keuntungan menggunakan JS Module adalah Mudah untuk mengelola kode, dan kode tidak menumpuk di 1 file. Dalam Module terdapat Export dan Import, Export mengeluarkan data, sedangkan Import Memasukkan Data. Export tidak hanya bisa untuk Array, tetapi Export bisa untuk Variabel, Object, Function, dan Class</p>
+
+<p>Pada saat menghubungkan file HTML dengan file JS, harus menambahkan "type = module"</p>
+
+```js
+<script src="./Indo.js" type="module"></script>
+```
+
+<p>Sebelumnya siapkan 1 file JS yang akan di Export (JP.js). Dan 1 file JS yang akan di Import (Indo.js)</p>
+
+```js
+// JP.js
+export let handphone = ["Sony", "Docomo", "Sharp"];
+
+// Indo.js
+import { handphone } from "./JP.js";
+console.log(handphone);
+// JP melakukan Export dan Indo melakukan Import.
+```
+
+![](./image/SS-js-module.png)
+
+<p>Penggunaan as (alias) pada saat Import</p>
+
+```js
+// JP.js
+export let handphone = ["Sony", "Docomo", "Sharp"];
+
+// Indo.js
+import { handphone as hp } from "./JP.js";
+console.log(hp);
+```
+
+![](./image/SS-js-module2.png)
+
+<p>Multiple Export</p>
+
+```js
+// JP.js
+export let handphone = ["Sony", "Docomo", "Sharp"];
+export let motor = ["Suzuki", "Kawasaki", "Honda"];
+
+// Indo.js
+import { handphone as hp, motor as mt } from "./JP.js";
+console.log(hp);
+console.log(mt);
+```
+
+![](./image/SS-js-module3.png)
+
+<p>Default Export <br/>
+Default Export hanya bisa mengexport 1 kali saja. Default Export ditangkap tanpa kurung kurawal ( { } ).</p>
+
+```js
+// JP.js
+let hiburan = ["Drama", "Animasi", "Komik"];
+export default hiburan;
+
+// Indo.js
+import hiduran from "./JP.js"; // Pada Default Export, juga terjadi kesalahan dalam nama variable tidak terjadi Error,
+console.log(hiduran); //karena JS sudah tahu variable mana yang Default Export.
+```
+
+![](./image/SS-js-module4.png)
+
+<p>Export Function</p>
+
+```js
+// JP.js
+export function hellow() {
+  console.log("Hello World!");
+}
+
+// Indo.js
+import { hellow } from "./JP.js";
+hellow();
+```
+
+![](./image/SS-js-module5.png)
+
+## JS Intermediate Recursive
+
+<p>Recursive adalah function yang memanggil dirinya sendiri sampai kondisi tertentu. <br/>
+Function recursive punya base case (titik paling kecil(berhenti)) dan recursion case (titik dia manggil diri dia sendiri)</p>
+
+```js
+function deretAngka(n) {
+  // Base Case
+  if (n == 1) {
+    console.log(n);
+  } else {
+    deretAngka(n - 1); // Recursion Case
+    console.log(n);
+  }
+}
+```
+
+![](./image/SS-js-recursive.png)
+
+<p>Faktorial Recursive</p>
+
+```js
+function faktorial(n) {
+  // Base Case
+  if (n == 1) {
+    return 1;
+  } else {
+    return n * faktorial(n - 1); // Recursion Case
+  }
+}
+console.log(faktorial(6));
+```
