@@ -775,7 +775,7 @@ jalan("Jalan") // Jika Jalan, maka .then akan berjalan
 
 <p>Web Storage akan menyimpan data secara lokal di dalam Browser Pengguna (User) <br/>
 Web Storage berbeda dengan Cookie, walau keduanya sama sama dapat menyimpan data. Tetapi Web Storage lebih aman dan dapat menampung data besar secara local, tanpa mempengaruhi kinerja website. <br/>
-Web Storage biasanya menyimpan Preferensi User, Setting score, dan lain - lain.</p>
+Web Storage biasanya menyimpan Preferensi User, Setting score, dan lain-lain.</p>
 
 <p>Jangan menggunakan Web Storage sebagai tempat menyimpan Data sensitif seperti Password atau Otentikasi.</p>
 
