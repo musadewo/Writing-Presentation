@@ -157,9 +157,9 @@ GitHub Organization adalah tempat untuk mengupload project secara berkelompok / 
 
 <p>Membuat Repo dan Branch di GitHub Organization</p>
 
-1. Klik Tab Repositories
+1. Klik Tab Repositories <br/>
    ![](./image/SS-git9.png)
-2. Klik Create a New Repository untuk membuat Repositories baru.
+2. Klik Create a New Repository untuk membuat Repositories baru.<br/>
    ![](./image/SS-git10.png)
 3. Masukkan Nama Repo, klik Public (Agar Member lain dapat melihatnya.), centang Add a README file, dan klik Create Repository.
    ![](./image/SS-git11.png)
@@ -168,7 +168,7 @@ GitHub Organization adalah tempat untuk mengupload project secara berkelompok / 
    ![](./image/SS-git13.png)
 5. Membuat Brach baru, dengan klik main, masukkkan nama untuk Branch baru, dan klik Creat branch: dev from 'main'.
    ![](./image/SS-git14.png)
-6. Hasilnya, dev telah ditambahkan sebagai Brach baru.
+6. Hasilnya, dev telah ditambahkan sebagai Brach baru. <br/>
    ![](./image/SS-git15.png)
 
 <p>Cara berpindah Brach dan membuat Branch baru didalam Brach</p>
@@ -177,17 +177,17 @@ GitHub Organization adalah tempat untuk mengupload project secara berkelompok / 
    ![](./image/SS-git16.png)
 
 2. Untuk berpindah Brach ada 2 cara, yaitu dengan git switch dan git checkout.
-   ![](./image/SS-git17.png)
+   ![](./image/SS-git17.png)<br/>
    ![](./image/SS-git18.png)
 
-3. Cara membuat Branch baru.
+3. Cara membuat Branch baru. <br/>
    ![](./image/SS-git19.png)
 
 <p>Cara Push didalam Branch, Pull Request, dan Marge</p>
 
-1. Siapkan File yang ingin di Push.
+1. Siapkan File yang ingin di Push. <br/>
    ![](./image/SS-git20.png)
-2. Melakukan git add, git commit, dan git push.
+2. Melakukan git add, git commit, dan git push. <br/>
    ![](./image/SS-git21.png)
 3. Buka GitHub Organization dan klik Compare & pull request.
    ![](./image/SS-git22.png)
