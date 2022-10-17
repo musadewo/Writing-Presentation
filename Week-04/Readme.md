@@ -206,3 +206,90 @@ GitHub Organization adalah tempat untuk mengupload project secara berkelompok / 
 ## Responsive Web Design
 
 <p>Responsive Web Design (RWD) bertujuan untuk membuat desain website dapat diakses dalam device apapun.</p>
+
+<b>ViewPort</b>
+
+<p>Viewport adalah area web yang terlihat oleh user.</p>
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+```
+
+<p>Perhatikan di atribut content, di sana kita menggunakan beberapa variabel untuk viewport : </p>
+
+- width untuk mengatur lebar halaman, jika membarikan nilai device-width maka lebar akan mengikuti ukuran lebar dari perangkat;
+- initial-scale adalah variabel untuk mengatur sekala (zoom) dari halaman web.
+
+<b>Max Width</b>
+
+<p>Max-width mendefinisikan lebar maksimum suatu elemen.</p>
+
+```html
+<img
+  src="https://img.freepik.com/premium-vector/meadows-landscape-with-mountains-hill_104785-943.jpg?w=2000"
+  alt=""
+  style="max-width: 50%"
+/>
+```
+
+![](./image/SS-rwd.png)
+
+<b>Relative Unit</b>
+
+<p>Relative unit berguna untuk mendesain website yang responsif karena ukurannya bisa berubah relatif terhadap parent atau ukuran layar</p>
+
+<p>Macam - macam satuan Unit Relative : </p>
+
+- %: Ukurannya relatif terhadap parent element
+- em: Ukurannya relatif terhadap font-size dari elemen saat ini
+- rem: Ukurannya relatif terhadap font-size root elemen (<html>). "rem" = "root em"
+- ch: Ukurannya mengikuti jumlah karakter (1 karakter sama dengan lebar dari karakter 0/nol font yang sedang aktif)
+- vh: Ukurannya relatif terhadap tinggi viewport (ukuran jendela tau aplikasi), 1vh = 1/100 dari tinggi viewport
+- vw: Ukurannya relatif terhadap lebar dari viewport. 1vw = 1/100 lebar viewport
+- vmin: Ukurannya relatif terhadap ukuran viewport yang lebih kecil (misalnya diorientasi portrait, lebar akan lebih kecil daripada tinggi). 1vmin = 1/100 dari ukuran viewport yang lebih kecil.
+- vmax: Sama dengan vmin, dia akan melihat ukuran viewport yang lebih besar
+- ex: Ukurannya relatif terhadap tinggi dari karakter "x" kecil font yang sedang aktif.
+
+```html
+<!-- Demo Relative Unit CSS -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <p class="rem">ini dari rem</p>
+    </div>
+
+    <div class="container">
+      <p class="em">ini dari em</p>
+    </div>
+  </body>
+</html>
+```
+
+```css
+.container {
+  font-size: 20px;
+}
+.rem {
+  font-size: 2rem;
+}
+.em {
+  font-size: 2em;
+}
+```
+
+![](./image/SS-rwd2.png)
+![](./image/SS-rwd3.png)
+
+<b>Media Query</b>
+
+## Bootstrap 5
