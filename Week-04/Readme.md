@@ -201,6 +201,29 @@ GitHub Organization adalah tempat untuk mengupload project secara berkelompok / 
 7. Tampilan setelah melakukan Marge.
    ![](./image/SS-git27.png)
 
+<p>Conflict pada saat pull request</p>
+<p>Conflict bisa terjadi karena perbedaan dalam codinga. Contoh Conflict</p>
+
+![](./image/SS-github.png)
+
+<p>Pada gambar ada Conflict yang harus diselesaikan agar dapat di merge pull request. Klik Resolve Conflict</p>
+
+![](./image/SS-github2.png)
+
+<p>Pada gambar terdapat perbedaan dalam codingan, pada Branch B-Test Tag a menghubungkan dengan login.html, sedangkan Branch dev Tag a menghubungkan dengan regis.html</p>
+
+<p>Cara penyelesaiannya adalah dengan menggubah codigan yang terjadi Conflict. Kemudian klik Mark as Resolved.</p>
+
+![](./image/SS-github3.png)
+
+<p>Setelah klik Mark as Resolved, akan muncul Commit merge.</p>
+
+![](./image/SS-github4.png)
+
+<p>Hasilnya, tinggal klik Merge pull request dan Confirm merge</p>
+
+![](./image/SS-github5.png)
+
 # Day 3 : Responsive Web Design & Bootstrap 5
 
 ## Responsive Web Design
