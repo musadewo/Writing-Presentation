@@ -292,4 +292,132 @@ GitHub Organization adalah tempat untuk mengupload project secara berkelompok / 
 
 <b>Media Query</b>
 
+<p>Media Query digunakan untuk mengatur CSS berdasarkan layar tampilan web, atau berdasarkan ukuran layar baik itu lebar, tingggi.</p>
+
+```css
+/* Contoh Penggunaan Media Query */
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+/* Jika layar dengan lebar max 600px, 
+maka ubah background-color pada body menjadi lightblue */
+```
+
+<b>Flex</b>
+
+<p>Flex digunakan untuk mengatur elemen di suatu halaman web</p>
+
+```html
+<!-- Contoh pengguaan Flex -->
+<!-- File html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./newstyle.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Membuat Flex Container</h1>
+
+    <div class="flex-container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+    </div>
+
+    <p>
+      Tata Letak Fleksibel harus memiliki elemen induk dengan properti tampilan
+      yang disetel ke flex.
+    </p>
+
+    <p>
+      Elemen turunan langsung dari wadah fleksibel secara otomatis menjadi item
+      fleksibel.
+    </p>
+  </body>
+</html>
+```
+
+```css
+/* File CSS */
+.flex-container {
+  display: flex;
+  background-color: green;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+```
+
+![](./image/SS-rwd4.png)
+
 ## Bootstrap 5
+
+<p>Bootstrap adalah framework HTML, CSS, dan JavaScript yang berfungsi untuk mendesain website responsive dengan cepat dan mudah.</p>
+
+<p>Tujuan dan fungsi Bootstrap adalah untuk membuat website responsive dan mobile-first. Jadi, semua elemen antarmuka website dipastikan bisa bekerja secara optimal di semua ukuran layar, baik desktop maupun perangkat seluler. <br/>Berkat grid system yang digunakan. Sistem grid pada bootstrap menggunakan rangkaian containers, baris, dan kolom untuk menyesuaikan bentuk layout dan konten website.</p>
+
+<p>Framework Bootstrap tersusun dari kumpulan file CSS dan JavaScript berbentuk class yang tinggal pakai. </p>
+
+<b>Cara memasang Bootstrap pada html</b>
+
+<p>Terdapat 2 cara dalam memasang Bootstrap, yaitu dengan cara Include via CDN dan Mendownload Compiled CSS and JS</p>
+
+1. Include via CDN.
+   Yang harus dilakukan adalah membuka Bootstrap page (https://getbootstrap.com/) dan scroll kebawah, hingga menemukan Include via CDN.
+   ![](./image/SS-bootstrap.png)
+   Copy link pada CSS Only, dan JavaScript Bundle with Popper, kemudian masukkan copy an tersebut kedalam file html.
+   ![](./image/SS-bootstrap2.png)
+   Link CSS ditaruh diatas tag title, sedangkan link JavaScript ditaruh diatas penutup body (/body).
+
+2. Compiled CSS and JS
+   Yang harus dilakukan adalah membuka Bootstrap page (https://getbootstrap.com/) dan scroll kebawah, hingga menemukan Read installation docs, klik link tersebut.
+   ![](./image/SS-bootstrap3.png)
+   Kemudian klik Download pada Compiled CSS and JS.
+   ![](./image/SS-bootstrap4.png)
+   Ekstrak file Rar yang tadi di Download ke dalam folder html berada.
+   ![](./image/SS-bootstrap5.png)
+   Hasil Ekstrak, siap digunakan.
+   ![](./image/SS-bootstrap6.png)
+
+<b>Cara Penggunaan Bootstrap</b>
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+```
+
+![](./image/SS-bootstrap7.png)
