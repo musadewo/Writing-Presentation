@@ -376,21 +376,21 @@ maka ubah background-color pada body menjadi lightblue */
 
 <p>Terdapat 2 cara dalam memasang Bootstrap, yaitu dengan cara Include via CDN dan Mendownload Compiled CSS and JS</p>
 
-1. Include via CDN.
-   Yang harus dilakukan adalah membuka Bootstrap page (https://getbootstrap.com/) dan scroll kebawah, hingga menemukan Include via CDN.
-   ![](./image/SS-bootstrap.png)
-   Copy link pada CSS Only, dan JavaScript Bundle with Popper, kemudian masukkan copy an tersebut kedalam file html.
-   ![](./image/SS-bootstrap2.png)
+1. Include via CDN. <br/>
+   Yang harus dilakukan adalah membuka Bootstrap page (https://getbootstrap.com/) dan scroll kebawah, hingga menemukan Include via CDN. <br/>
+   ![](./image/SS-bootstrap.png) <br/>
+   Copy link pada CSS Only, dan JavaScript Bundle with Popper, kemudian masukkan copy an tersebut kedalam file html. <br/>
+   ![](./image/SS-bootstrap2.png) <br/>
    Link CSS ditaruh diatas tag title, sedangkan link JavaScript ditaruh diatas penutup body (/body).
 
 2. Compiled CSS and JS
    Yang harus dilakukan adalah membuka Bootstrap page (https://getbootstrap.com/) dan scroll kebawah, hingga menemukan Read installation docs, klik link tersebut.
-   ![](./image/SS-bootstrap3.png)
-   Kemudian klik Download pada Compiled CSS and JS.
-   ![](./image/SS-bootstrap4.png)
-   Ekstrak file Rar yang tadi di Download ke dalam folder html berada.
-   ![](./image/SS-bootstrap5.png)
-   Hasil Ekstrak, siap digunakan.
+   ![](./image/SS-bootstrap3.png) <br/>
+   Kemudian klik Download pada Compiled CSS and JS. <br/>
+   ![](./image/SS-bootstrap4.png)<br/>
+   Ekstrak file Rar yang tadi di Download ke dalam folder html berada.<br/>
+   ![](./image/SS-bootstrap5.png) <br/>
+   Hasil Ekstrak, siap digunakan. <br/>
    ![](./image/SS-bootstrap6.png)
 
 <b>Cara Penggunaan Bootstrap</b>
