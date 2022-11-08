@@ -438,4 +438,458 @@ export default DetailPage;
 
 ![](./image/SS-redux4.png)
 
-<p>Selanjutnya saya akan membuat komponen Redux</p>
+<p>Selanjutnya saya akan membuat komponen redux.</p>
+
+<p>Membuat Store</p>
+
+<p>Store adalah tempat untuk menampung state. Store dalam Front-End dibilang sebagai database untuk Front-End.</p>
+
+<p>../redux/store/index.js</p>
+
+```jsx
+import { createStore } from "redux";
+
+const store = createStore();
+
+export default store;
+```
+
+<p>Membuat Reducer</p>
+
+<p>Sebuah function yang tugasnya untuk mengolah state yang ada di store. Terdapat 2 parameter wajib dari reducer, yaitu state dan action.</p>
+
+<p>../redux/reducer/keranjangReducer.js</p>
+
+```jsx
+const initialState = {
+  totalKeranjang: 0,
+};
+
+function KeranjangReducer(state = initialState, action) {
+  switch (action.type) {
+    default:
+      return state;
+  }
+}
+
+export default KeranjangReducer;
+```
+
+<p>Setelah membuat reducer, selanjutnya kita hubungkan reducer dengan store yang telah dibuat.</p>
+
+<p>../redux/store/index.js</p>
+
+```jsx
+import { createStore } from "redux";
+import keranjangReducer from "../reducer/keranjangReducer";
+
+const store = createStore(keranjangReducer);
+
+export default store;
+```
+
+<p>Pada component Keranjang.jsx saya menambahkan console.log untuk debungging / mengetes apakah codingan yang saya buat benar.</p>
+
+<p>../components/Keranjang.jsx</p>
+
+```jsx
+import React from "react";
+import { useSelector } from "react-redux";
+
+function Keranjang() {
+  const state = useSelector((state) => state);
+
+  console.log(state);
+
+  return (
+    <div>
+      <span>Keranjang</span>
+      <span>0</span>
+    </div>
+  );
+}
+
+export default Keranjang;
+```
+
+<p>Output</p>
+
+![](./image/SS-redux6.png)
+
+<p>Console.log akan menampilkan data berupa object. Yang artinya data dari state Keranjang.jsx sudah ada dan data dari totalKeranjang didapatkan dari useSelector yang memanggil state dari totalKeranjang yang ada pada file keranjangReducer.js.</p>
+
+<p>Membuat Provide pada main.jsx</p>
+
+![](./image/SS-redux7.png)
+
+<p>Men destructuring pada codingan Keranjang.jsx dan memasukkan totalKeranjang kedalam function.</p>
+
+<p>../components/Keranjang.jsx</p>
+
+```jsx
+import React from "react";
+import { useSelector } from "react-redux";
+
+function Keranjang() {
+  const { totalKeranjang } = useSelector((state) => state);
+  // console.log(state)
+
+  return (
+    <div>
+      <span>Keranjang</span>
+      <span>{totalKeranjang}</span>
+    </div>
+  );
+}
+
+export default Keranjang;
+```
+
+<p>Membuat file action didalam folder redux/action</p>
+
+<p>../redux/action/keranjangAction.js</p>
+
+```jsx
+/* export */
+export const INCREMENT_KERANJANG = "INCREMENT_KERANJANG";
+export const DECREMENT_KERANJANG = "DECREMENT_KERANJANG";
+
+/* 2 export function dibawah berfungsi untuk me return 
+function pada keranjangReducer.js */
+export function incrementKeranjang() {
+  console.log("action dipanggil");
+  return {
+    type: INCREMENT_KERANJANG,
+  };
+}
+
+export function decrementKeranjang() {
+  return {
+    type: DECREMENT_KERANJANG,
+  };
+}
+```
+
+<p>Setelah membuat file keranjangAction.js, kita harus mengedit kembali file keranjangReducer.js. Yang kita edit adalah penambahan import dari keranjangAction.js</p>
+
+<p>../redux/reducer/keranjangReducer.js</p>
+
+```jsx
+/* import dari keranjangAction.js */
+import {
+  INCREMENT_KERANJANG,
+  DECREMENT_KERANJANG,
+} from "../action/keranjangAction";
+
+const initialState = {
+  totalKeranjang: 0,
+};
+
+function keranjangReducer(state = initialState, action) {
+  console.log(action);
+
+  switch (action.type) {
+    case INCREMENT_KERANJANG:
+      return {
+        totalKeranjang: state.totalKeranjang + 1,
+      };
+    case DECREMENT_KERANJANG:
+      return {
+        totalKeranjang: state.totalKeranjang - 1,
+      };
+    default:
+      return state;
+  }
+}
+
+export default keranjangReducer;
+```
+
+<p>../components/Counter.jsx</p>
+
+```jsx
+import React, { useState } from "react";
+/* import useDiscpatch dari react-redux*/
+import { useDispatch } from "react-redux";
+/* import function dari keranjangAction*/
+import {
+  incrementKeranjang,
+  decrementKeranjang,
+} from "../redux/action/keranjangAction";
+
+function Counter() {
+  const dispatch = useDispatch();
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    dispatch(incrementKeranjang());
+    setCount(count + 1);
+  };
+
+  const decrement = () => {
+    dispatch({
+      type: "DECREMENT_KERANJANG",
+    });
+    setCount(count - 1);
+  };
+
+  return (
+    <>
+      <button onClick={decrement}>-</button>
+      <span>{count}</span>
+      <button onClick={increment}>+</button>
+    </>
+  );
+}
+
+export default Counter;
+```
+
+Fungsinya **useDispatch** adalah untuk mengirim action kedalam komponen. nah dari codingan diatas saya memakai useDispatch karena saya mau menampilkan data yang ada pada keranjangAction.
+
+<p>Membuat components SummaryPembelian.jsx <br/>
+Pada SummaryPembelian.jsx kita memnggunakan konsep yang sama dengan Keranjang.jsx, yaitu kita hanya perlu destructur menjadi totalKeranjang.</p>
+
+<p>../components/SummaryPembelian.jsx</p>
+
+```jsx
+import React from "react";
+import { useSelector } from "react-redux";
+
+function SummaryPembelian() {
+  const { totalKeranjang } = useSelector((state) => state);
+
+  return (
+    <div>
+      <h1>Summary Pembelian</h1>
+      <h2>jumlah barang yg dibeli ada {totalKeranjang}</h2>
+    </div>
+  );
+}
+
+export default SummaryPembelian;
+```
+
+<p>Output</p>
+
+<p><img src="./gif/gif-redux.gif"></p>
+
+<b>Combine Reducer</b>
+
+<p>combineReducer digunakan apabila kita mempunyai reducer lebih dari satu.</p>
+
+<p>Contoh penggunaan combine reducer</p>
+
+```js
+import { combineReducers, createStore } from "redux";
+// import reducer dari counterReducer
+import counterReducer from "../reducer/counterReducer";
+// import reducer dari todolistReducer
+import todolistReducer from "../reducer/todolistReducer";
+
+const allReducer = combineReducers({
+  counter: counterReducer,
+  todo: todolistReducer,
+});
+const store = createStore(allReducer);
+export default store;
+```
+
+# Day 5 : Async Actions with Middleware and Thunk
+
+<p>Thunk adalah konsep pemrograman yang menggunakan fungsi untuk menunda evaluasi/kalkulasi suatu operasi.</p>
+
+<p>Redux Thunk adalah middleware yang memungkinkan Anda memanggil pembuat aksi yang mengembalikan fungsi sebagai ganti objek aksi. Fungsi itu menerima metode pengiriman penyimpanan, yang kemudian digunakan untuk mengirim aksi sinkron di dalam isi fungsi setelah operasi asinkron selesai.</p>
+
+<p>Pada dasarnya async tidak bisa dijalankan di action. Maka solusinya kita butuh midleware yang disebut Redux thunk.</p>
+
+<p>Kita diharuskan menginstall terlebih dahulu react-redux-thunk, seperti react-redux yang diluar library react.</p>
+
+<b>Install React-redux-thunk</b>
+
+<p>Untuk installasi kita hanya perlu memasukkan command 'npm install redux-thunk' pada terminal dan menunggu hingga proses selesai.</p>
+
+![](./image/SS-thunk.png)
+
+<p>Setelah selesai menginstall, cek kembali apakah sudah terpasang dengan membuka file package.json.</p>
+
+![](./image/SS-thunk2.png)
+
+<p>Sebelum melakukan coding, saya ingin menginstall Axios. <br/> Axios merupakan library opensource yang digunakan untuk request data melalui http. Axios terkenal dengan keunggulannya yaitu ringan, promised-based, mendukung async dan awai untuk kode yang asinkronus.</p>
+
+<b>Install Axios</b>
+
+<p>Untuk installasi kita hanya perlu memasukkan command 'npm install axios' pada terminal dan menunggu hingga proses selesai.</p>
+
+![](./image/SS-thunk3.png)
+
+<p>Setelah selesai menginstall, cek kembali apakah sudah terpasang dengan membuka file package.json.</p>
+
+![](./image/SS-thunk4.png)
+
+<b>Redux-Thunk dengan kasus TodoList</b>
+
+<p>Pertama saya akan membuat folder redux, didalam folder redux ada folder action, reducer, dan store.</p>
+
+<p>../redux/action/todoAction.js</p>
+
+```js
+// import axios yang tadi diinstall
+import axios from "axios";
+// export function
+export const GET_TODO = "GET_TODO";
+export const FETCH_START = "FETCH_START";
+export const SUCCESS_GET_TODO = "SUCCESS_GET_TODO";
+
+function fetchStart() {
+  return {
+    type: FETCH_START,
+  };
+}
+
+function successGetTodo(data) {
+  return {
+    type: SUCCESS_GET_TODO,
+    payload: data,
+  };
+}
+
+export const getTodo = () => {
+  return async (dispatch) => {
+    // Mengubah loading yang awalnya false menjadi true
+    dispatch(fetchStart());
+    // result API isi data todos, loading jadi false
+    const result = await axios.get(
+      "https://63478a450484786c6e82998f.mockapi.io/todo"
+    );
+    dispatch(successGetTodo(result.data));
+  };
+};
+```
+
+<p>../redux/reducer/todoReducer.js</p>
+
+```js
+// import function dari todoAction.js
+import { FETCH_START, SUCCESS_GET_TODO } from "../action/todoAction";
+
+// variable untuk menampung isi API
+const initialState = {
+  todos: [],
+  isLoading: false,
+  err: null,
+};
+
+// Proses reducer
+const todoReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case FETCH_START:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case SUCCESS_GET_TODO:
+      return {
+        ...state,
+        todos: action.payload,
+        isLoading: false,
+      };
+    default:
+      return state;
+  }
+};
+
+export default todoReducer;
+```
+
+<p>../redux/store/index.js</p>
+
+```js
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+// import function dari todoReducer.js
+import todoReducer from "../reducer/todoReducer";
+
+// combineReducers bisa menggabungkan 2 atau lebih reducer dalam 1 Store.
+const allReducer = combineReducers({
+  todo: todoReducer,
+});
+
+const store = createStore(allReducer, applyMiddleware(thunk));
+
+export default store;
+```
+
+<p>../src/main.jsx</p>
+
+```jsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { Provider } from "react-redux"; /* import provider */
+import store from "./redux/store"; /* import store */
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  // <React.StrictMode>
+  /* Memanggil Store */
+  <Provider store={store}>
+    <App />
+  </Provider>
+  // </React.StrictMode>
+);
+```
+
+<p>../src/components/TodoList.jsx</p>
+
+```jsx
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+/* import  function dari todoAction.js*/
+import { getTodo } from "../redux/action/todoAction";
+
+function TodoList() {
+  const dispatch = useDispatch();
+  const { todos, isLoading } = useSelector((state) => state.todo);
+
+  /* useEffect untuk mengambil data dari function getTodo */
+  useEffect(() => {
+    dispatch(getTodo());
+  }, []);
+
+  return (
+    <div>
+      <h2>Todo List</h2>
+
+      <ul>
+        {isLoading ? (
+          <span>Loading...</span>
+        ) : (
+          todos.map((item) => <li key={item.id}>{item.todo}</li>)
+        )}
+      </ul>
+    </div>
+  );
+}
+
+export default TodoList;
+```
+
+<p>../src/App.jsx</p>
+
+```jsx
+import TodoList from "./components/TodoList";
+
+function App() {
+  return (
+    <div className="App">
+      <TodoList />
+    </div>
+  );
+}
+
+export default App;
+```
+
+<p>Output</p>
+
+<p><img src="./gif/gif-thunk.gif"></p>
