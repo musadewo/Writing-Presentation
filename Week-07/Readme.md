@@ -269,9 +269,73 @@ export default HomePage;
 
 ![](./image/SS-router3.png)
 
-<p>Dari Output tersebut, link yang menuju about studen dan about teacher sudah ada, tetapi ketika kita klik hanya menampilkan halaman kosong. Hal ini dikarenakan kita belum menambahkan route about student dan about teacher pada app.jsx</p>
+<p>Dari Output tersebut, link yang menuju about studen dan about teacher sudah ada, tetapi ketika kita klik hanya menampilkan halaman kosong. Hal ini dikarenakan kita belum menambahkan route about student dan about teacher pada App.jsx</p>
 
 <p>App.jsx</p>
+
+```jsx
+import { Routes, Route, Link } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import DetailPage from "./pages/DetailPage";
+import AboutStudent from "./pages/AboutStudent";
+import AboutSchool from "./pages/AboutSchool";
+import AboutTeacher from "./pages/AboutTeacher";
+
+const App = () => {
+  return (
+    <>
+      <nav>
+        <Link to={"/"}>Home</Link>
+        <Link to={"/about"}>About</Link>
+        <Link to={"/detail"}>Detail</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/detail/:id" element={<DetailPage />} />
+        <Route path="/about" element={<AboutPage />}>
+          <Route path="student" element={<AboutStudent />} />
+          <Route path="teacher" element={<AboutTeacher />} />
+          <Route index element={<AboutSchool />} />
+        </Route>
+      </Routes>
+    </>
+  );
+};
+
+export default App;
+```
+
+<p>Pada Codingan diatas, saya membuat parent route dengan index defaultnya AboutSchool. Jika kita mengklik link about, maka akan langsung ke halaman AboutSchool dengan menambahkan outlet pada file AboutPage.jsx</p>
+
+<p>AboutPage.jsx</p>
+
+```jsx
+import { Outlet, Link } from "react-router-dom";
+
+const AboutPage = () => {
+  return (
+    <>
+      <Outlet />
+      <Link to={"student"}>About Student |</Link>
+      <Link to={"teacher"}>About Teacher</Link>
+    </>
+  );
+};
+
+export default AboutPage;
+```
+
+peran `<Outlet/>` mirip dengan `<children/>`, bedanya hasil render dari `<Outlet/>` ini akan dinamis berdasarkan path URL yang terdaftar. dari contoh diatas, terdapat Route parent dengan path='/about' yang memiliki children dengan path='student' dan path='teacher', `<Outlet/>` akan merender children tersebut sebagai `<AboutPage />` saat akses URL-nya /student (/ sebagai parent + student sebagai children), dan akan merender `<DashboardTasks />` saat akses URL-nya /teacher (/ sebagai parent + teacher sebagai children). nah pada kali ini saya memberikan AboutSchool sebagai index. maka yang akan dirender ketika mengklik about adalah AboutSchool.
+
+<p>Output</p>
+
+<p><img src="./gif/gif-route2.gif"></p>
+
+<p>Berikutnya kita akan membuat DetailPage.jsx. Fungsi dari DetailPage.jsx adalah ketika kita mengklik button detail pada HomePage.jsx, Data yang berupa ID dari HomePage.jsx akan ditampilkan pada DetailPage.jsx</p>
+
+<p>Jika kita menekan salah satu dari 3 button yang ada, jika menekan button yang bernama Sadewo, maka handleDetail akan memanggil data yang berada di file DetailPage.jsx dan menampilkannya.</p>
 
 <p>DetailPage.jsx</p>
 
@@ -323,30 +387,55 @@ const DetailPage = () => {
 export default DetailPage;
 ```
 
-<p>AboutPage.jsx</p>
-
-```jsx
-import { Outlet, Link } from "react-router-dom";
-
-const AboutPage = () => {
-  return (
-    <>
-      <Outlet />
-      <Link to={"student"}>About Student |</Link>
-      <Link to={"teacher"}>About Teacher</Link>
-    </>
-  );
-};
-
-export default AboutPage;
-```
-
-<p>Jika kita menekan salah satu dari 3 button yang ada, jika menekan button yang bernama Sadewo, maka handleDetail akan memanggil data yang berada di file DetailPage.jsx dan menampilkannya.</p>
-
 <p>Output</p>
 
 <p><img src="./gif/gif-route.gif"></p>
 
 <p><b>Note : </b>Pada DetailPage.jsx,saya menggunakan useParams untuk menangkap id yang kita kirim dari halaman home dengan mencocokkan data yang dikirim dari home dan melakukan Mapping data untuk menampilkan hasil yang sesuai dari data filter.</p>
 
-<b>Membuat Route</b>
+# Day 3 & 4: State Management React Redux
+
+<p>State management library adalah library yang digunakan untuk mengelola state pada suatu aplikasi JavaScript.</p>
+
+<b>Kenapa kita menggunakan Redix ? </b>
+
+<p>Redux akan mempermudah dalam mengelola state dimana mengubah state di child-child component tanpa harus membuat bantuan dengan props didalam component didalam props component. Dalam hal ini, redux menggunakan state yang bisa dishare diseluruh aplikasi, menggunakan middleware.</p>
+
+<b>Bagaimana cara kerja Redux ? </b>
+
+![](./image/SS-redux.png)
+
+<p>Alur kerja Redux : </p>
+
+1. Pertama akan ada triger dari UI
+2. Kemudian akan ke action
+3. Dari action reducer akan mengubah state yang sesuai dengan
+4. type dari action tadi
+5. Terahir update UI lagi
+
+<p>Terdapat 4 Faktor Utama : </p>
+
+1. UI (Tampilan Website / Aplikasi)
+2. Action <br/>Sebuah function yang mereturn sebuah objek. Objek tersebut memiliki sebuah property wajib yaitu type. Type inilah yang menentukan bagaimana statenya akan diubah.
+3. Reducer <br/> Sebuah function yang tugasnya untuk mengolah state yang ada di store. Misal menambah data, menghapus data, mengambil data, dsb. Ada 2 parameter wajib dari reducer, yaitu state dan action.
+4. Store <br/> Store adalah tempat untuk menampung state. Store dalam Front-End dibilang sebagai database untuk Front-End.
+
+<b>Install React Redux</b>
+
+<p>Sebelum menggunakan Redux, kita diwajibkan menginstall terlebih dahulu. Pastika kita menggunakan React versi 16.8.3 keatas, karena versi tersebut yang support dengan React Redux 8.x.</p>
+
+<p>Untuk Installasinya mirip dengan react router, kita hanya memasukkan command 'npm install redux react-redux' kedalam terminal.</p>
+
+![](./image/SS-redux2.png)
+
+<p>Setelah selesai menginstall, cek kembali apakah sudah terpasang dengan membuka file package.json.</p>
+
+![](./image/SS-redux3.png)
+
+<b>Membuat React Redux dengan Contoh Kasus Counter</b>
+
+<p>Yang pertama saya lakukan adalah membuat components terlebih dahulu.</p>
+
+![](./image/SS-redux4.png)
+
+<p>Selanjutnya saya akan membuat komponen Redux</p>
