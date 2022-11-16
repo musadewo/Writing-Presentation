@@ -334,3 +334,89 @@ module.exports = sum;
 ![](./image/SS-test10.png)
 
 ## RTL (React Testing Library)
+
+<p>RTL (React Testing Library) mirip dengan Jest, tetapi RTL sudah menjadi 1 package dengan React. Ketika kita menginstall React, otomatis RTL sudah ada didalam package React.</p>
+
+<p>Dalam RTL kita tidak perlu mengedit package.json lagi.</p>
+
+![](./image/SS-rtl.png)
+
+![](./image/SS-rtl2.png)
+
+<p>Untuk me run test nya mirip dengan Jest, kita hanya perlu memasukkan command 'npm start' untuk menjalankan React, dan commnad 'npm run test' untuk menjalankan Test. <br/>
+<b>Note :</b> Kita perlu menjalankan React terlebih dahulu sebelum merunning Test.</p>
+
+<p>Pada React sudah disediakan App.js dan App.test.js yang akan kita gunakan.</p>
+
+![](./image/SS-rtl3.png)
+
+<p>Disini saya akan mencontohkan test menggunakan RTL (React Testing Library)</p>
+
+<p>Saya akan menggunakan App.js dan App.test.js bawaan dari React.</p>
+
+<p>App.js</p>
+
+```js
+import logo from "./logo.svg";
+import "./App.css";
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+
+export default App;
+```
+
+<p>App.test.js</p>
+
+```js
+import { render, screen } from "@testing-library/react";
+import App from "./App";
+
+test("renders learn react link", () => {
+  render(<App />);
+  const linkElement = screen.getByText(/learn react/i);
+  expect(linkElement).toBeInTheDocument();
+});
+```
+
+<p>Pada App.test.js ada function test yang sama yang ada di Jest, pada arrow function test, test ingin merender learn react link. Didalam Arrow Function test ada Render(<App />) berfungsi untuk merender component yaitu App.js. Selanjutnya dari component App.js akan dicari element dengan cara screen.getByText, screen mirip dengan document pada DOM sedangkan getByText itu mirip dengan getElementById yang ada di DOM. yang kita cari adalah tulisan 'learn react' yang ada pada App.js. Jika tulisan 'learn react' ditemukan, maka expect / ekspetasinya element yang ditemukan ada didalam document (App.js).</p>
+
+<p>Kita coba test, sebelum test kita run dahulu React nya.</p>
+
+<p>Kita masukkan command 'npm start' untuk menjalankan React.</p>
+
+```npm
+npm start
+```
+
+![](./image/SS-rtl5.png) <br/>
+
+![](./image/SS-rtl6.png)
+
+<p>Setelah kita run, sekarang kita run test.</p>
+
+```npm
+npm run test
+```
+
+![](./image/SS-rtl4.png)
+
+<p>Seperti Jest, RTL juga memberitahu mengenai apakah Lulus / Pass sebuah program.</p>
